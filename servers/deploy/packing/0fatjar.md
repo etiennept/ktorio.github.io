@@ -22,19 +22,11 @@ to generate a fat JAR using netty as an engine:
 
 {% capture build-gradle %}
 ```groovy
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
-    }
+plugins{
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
 }
-
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'kotlin'
-apply plugin: 'application'
-
 //mainClassName = 'io.ktor.server.netty.DevelopmentEngine' // For versions < 1.0.0-beta-3
 mainClassName = 'io.ktor.server.netty.EngineMain' // Starting with 1.0.0-beta-3
 
