@@ -136,20 +136,9 @@ When you are done, the `build.gradle` file should look like this:
 group 'Example'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '{{site.kotlin_version}}'
-    ext.ktor_version = '{{site.ktor_version}}'
-
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
+plugins{
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
 }
-
-apply plugin: 'java'
-apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 compileKotlin {
